@@ -3,23 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ملف الأعمال | كوثر اليامي</title>
+  <title>ملف الأعمال | ماجد عطيف</title>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --lavender: #C8B8FF;
-      --lavender-light: #E4DAFF;
-      --lavender-dark: #A998E8;
-      --purple-dark: #1A0F3C;
-      --purple-mid: #2D1B69;
-      --orange: #FF6B00;
-      --orange-light: #FF8C38;
-      --black: #0A0A0A;
+      --blue: #4F8EF7;
+      --blue-light: #A8C8FF;
+      --blue-dark: #2563EB;
+      --dark: #0D1117;
+      --dark-mid: #161B22;
+      --green: #00D084;
+      --green-light: #4DFFA6;
       --white: #FFFFFF;
-      --gray: #F5F3FF;
-      --text-muted: #6B5E8A;
+      --gray: #F0F4FF;
+      --text-muted: #6B7FA3;
     }
 
     html { scroll-behavior: smooth; }
@@ -27,7 +26,7 @@
     body {
       font-family: 'Cairo', 'Tajawal', sans-serif;
       background: var(--white);
-      color: var(--black);
+      color: var(--dark);
       overflow-x: hidden;
       direction: rtl;
     }
@@ -36,181 +35,180 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 999;
-      background: rgba(26,15,60,0.95);
+      background: rgba(13,17,23,0.97);
       backdrop-filter: blur(12px);
       padding: 18px 5%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 2px solid var(--orange);
+      border-bottom: 2px solid var(--blue-dark);
     }
-    .nav-logo { font-size: 1.6rem; font-weight: 900; color: var(--lavender); letter-spacing: -1px; }
-    .nav-logo span { color: var(--orange); }
+    .nav-logo { font-size: 1.6rem; font-weight: 900; color: var(--blue-light); letter-spacing: -1px; }
+    .nav-logo span { color: var(--green); }
     .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a { color: var(--lavender-light); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.3s; }
-    .nav-links a:hover { color: var(--orange); }
-    .nav-cta { background: var(--orange); color: var(--white) !important; padding: 10px 24px; border-radius: 30px; font-weight: 700 !important; transition: background 0.3s, transform 0.2s !important; }
-    .nav-cta:hover { background: var(--orange-light) !important; transform: scale(1.05); }
+    .nav-links a { color: var(--blue-light); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-cta { background: var(--blue-dark); color: var(--white) !important; padding: 10px 24px; border-radius: 30px; font-weight: 700 !important; transition: background 0.3s, transform 0.2s !important; }
+    .nav-cta:hover { background: var(--blue) !important; transform: scale(1.05); }
 
     #hero {
       min-height: 100vh;
-      background: var(--purple-dark);
+      background: var(--dark);
       display: flex; align-items: center; justify-content: center;
       position: relative; overflow: hidden;
       padding: 120px 5% 80px;
     }
-    .hero-bg-shape { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.25; pointer-events: none; }
-    .hero-bg-shape.s1 { width: 600px; height: 600px; background: var(--lavender); top: -100px; right: -150px; }
-    .hero-bg-shape.s2 { width: 400px; height: 400px; background: var(--orange); bottom: -100px; left: -100px; }
-    .hero-bg-shape.s3 { width: 300px; height: 300px; background: var(--purple-mid); top: 40%; left: 30%; }
+    .hero-bg-shape { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.2; pointer-events: none; }
+    .hero-bg-shape.s1 { width: 600px; height: 600px; background: var(--blue); top: -100px; right: -150px; }
+    .hero-bg-shape.s2 { width: 400px; height: 400px; background: var(--green); bottom: -100px; left: -100px; }
+    .hero-bg-shape.s3 { width: 300px; height: 300px; background: var(--dark-mid); top: 40%; left: 30%; }
     .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1200px; width: 100%; position: relative; z-index: 2; }
-    .hero-text .badge { display: inline-block; background: var(--orange); color: var(--white); font-size: 0.8rem; font-weight: 700; padding: 6px 18px; border-radius: 30px; margin-bottom: 20px; letter-spacing: 1px; }
+    .hero-text .badge { display: inline-block; background: var(--green); color: var(--dark); font-size: 0.8rem; font-weight: 700; padding: 6px 18px; border-radius: 30px; margin-bottom: 20px; letter-spacing: 1px; }
     .hero-text h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 900; color: var(--white); line-height: 1.15; margin-bottom: 10px; }
-    .hero-text h1 span { color: var(--lavender); }
-    .hero-text .subtitle { font-size: 1.1rem; color: var(--lavender-light); margin-bottom: 30px; line-height: 1.7; font-weight: 400; }
-    .hero-text .en-title { font-size: 1.4rem; font-weight: 700; color: var(--orange); margin-bottom: 30px; letter-spacing: 2px; }
+    .hero-text h1 span { color: var(--blue-light); }
+    .hero-text .subtitle { font-size: 1.1rem; color: rgba(168,200,255,0.85); margin-bottom: 30px; line-height: 1.7; font-weight: 400; }
+    .hero-text .en-title { font-size: 1.4rem; font-weight: 700; color: var(--green); margin-bottom: 30px; letter-spacing: 2px; }
     .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
-    .btn-primary { background: var(--orange); color: var(--white); padding: 14px 36px; border-radius: 40px; font-size: 1rem; font-weight: 700; text-decoration: none; transition: all 0.3s; display: inline-block; border: 2px solid var(--orange); }
-    .btn-primary:hover { background: transparent; color: var(--orange); transform: translateY(-2px); }
-    .btn-outline { background: transparent; color: var(--lavender); padding: 14px 36px; border-radius: 40px; font-size: 1rem; font-weight: 700; text-decoration: none; border: 2px solid var(--lavender); transition: all 0.3s; display: inline-block; }
-    .btn-outline:hover { background: var(--lavender); color: var(--purple-dark); }
-    .hero-card { background: rgba(200,184,255,0.1); border: 1.5px solid rgba(200,184,255,0.25); border-radius: 24px; padding: 40px; backdrop-filter: blur(10px); }
-    .hero-card .avatar-wrap { width: 140px; height: 140px; border-radius: 50%; background: linear-gradient(135deg, var(--lavender), var(--orange)); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; }
+    .btn-primary { background: var(--blue-dark); color: var(--white); padding: 14px 36px; border-radius: 40px; font-size: 1rem; font-weight: 700; text-decoration: none; transition: all 0.3s; display: inline-block; border: 2px solid var(--blue-dark); }
+    .btn-primary:hover { background: transparent; color: var(--blue-light); border-color: var(--blue-light); transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--green); padding: 14px 36px; border-radius: 40px; font-size: 1rem; font-weight: 700; text-decoration: none; border: 2px solid var(--green); transition: all 0.3s; display: inline-block; }
+    .btn-outline:hover { background: var(--green); color: var(--dark); }
+    .hero-card { background: rgba(79,142,247,0.08); border: 1.5px solid rgba(79,142,247,0.25); border-radius: 24px; padding: 40px; backdrop-filter: blur(10px); }
+    .hero-card .avatar-wrap { width: 140px; height: 140px; border-radius: 50%; background: linear-gradient(135deg, var(--blue-dark), var(--green)); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; }
     .hero-card .name { text-align: center; color: var(--white); font-size: 1.5rem; font-weight: 800; margin-bottom: 6px; }
-    .hero-card .role { text-align: center; color: var(--lavender); font-size: 0.95rem; margin-bottom: 24px; }
+    .hero-card .role { text-align: center; color: var(--blue-light); font-size: 0.95rem; margin-bottom: 24px; }
     .hero-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 24px; }
-    .stat-box { background: rgba(255,107,0,0.15); border: 1px solid rgba(255,107,0,0.3); border-radius: 14px; padding: 16px 10px; text-align: center; }
-    .stat-box .num { font-size: 1.6rem; font-weight: 900; color: var(--orange); display: block; }
-    .stat-box .lbl { font-size: 0.72rem; color: var(--lavender-light); margin-top: 2px; }
+    .stat-box { background: rgba(0,208,132,0.1); border: 1px solid rgba(0,208,132,0.3); border-radius: 14px; padding: 16px 10px; text-align: center; }
+    .stat-box .num { font-size: 1.6rem; font-weight: 900; color: var(--green); display: block; }
+    .stat-box .lbl { font-size: 0.72rem; color: var(--blue-light); margin-top: 2px; }
 
     section { padding: 90px 5%; }
-    .section-tag { display: inline-block; background: var(--lavender); color: var(--purple-dark); font-size: 0.8rem; font-weight: 700; padding: 5px 16px; border-radius: 20px; margin-bottom: 12px; }
-    .section-title { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; color: var(--purple-dark); margin-bottom: 14px; line-height: 1.2; }
-    .section-title span { color: var(--orange); }
+    .section-tag { display: inline-block; background: var(--blue-light); color: var(--dark); font-size: 0.8rem; font-weight: 700; padding: 5px 16px; border-radius: 20px; margin-bottom: 12px; }
+    .section-title { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; color: var(--dark); margin-bottom: 14px; line-height: 1.2; }
+    .section-title span { color: var(--blue-dark); }
     .section-sub { color: var(--text-muted); font-size: 1rem; max-width: 560px; line-height: 1.8; }
     .section-header { margin-bottom: 50px; }
-    .divider { width: 60px; height: 4px; background: linear-gradient(90deg, var(--orange), var(--lavender)); border-radius: 4px; margin: 16px 0; }
+    .divider { width: 60px; height: 4px; background: linear-gradient(90deg, var(--blue-dark), var(--green)); border-radius: 4px; margin: 16px 0; }
 
     #about { background: var(--gray); }
     .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: center; max-width: 1200px; margin: 0 auto; }
-    .about-img-wrap { position: relative; }
-    .about-img-box { width: 100%; aspect-ratio: 3/4; background: linear-gradient(145deg, var(--purple-mid), var(--lavender-dark)); border-radius: 32px; display: flex; align-items: center; justify-content: center; font-size: 5rem; position: relative; overflow: hidden; }
-    .about-img-box::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(26,15,60,0.6) 100%); }
-    .about-badge { position: absolute; bottom: -20px; left: -20px; background: var(--orange); color: var(--white); border-radius: 20px; padding: 18px 22px; font-weight: 800; text-align: center; font-size: 0.85rem; box-shadow: 0 8px 30px rgba(255,107,0,0.4); }
+    .about-img-box { width: 100%; aspect-ratio: 3/4; background: linear-gradient(145deg, var(--dark), var(--blue-dark)); border-radius: 32px; display: flex; align-items: center; justify-content: center; font-size: 5rem; position: relative; overflow: hidden; }
+    .about-img-box::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(13,17,23,0.6) 100%); }
+    .about-badge { position: absolute; bottom: -20px; left: -20px; background: var(--blue-dark); color: var(--white); border-radius: 20px; padding: 18px 22px; font-weight: 800; text-align: center; font-size: 0.85rem; box-shadow: 0 8px 30px rgba(37,99,235,0.4); }
     .about-badge strong { font-size: 2rem; display: block; }
-    .about-content .about-intro { font-size: 1.05rem; line-height: 1.9; color: #3D3157; margin-bottom: 28px; }
+    .about-content .about-intro { font-size: 1.05rem; line-height: 1.9; color: #2D3748; margin-bottom: 28px; }
     .info-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; }
     .info-item { display: flex; align-items: flex-start; gap: 12px; }
-    .info-icon { width: 42px; height: 42px; border-radius: 12px; background: var(--lavender); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .info-icon { width: 42px; height: 42px; border-radius: 12px; background: var(--blue-light); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
     .info-text strong { font-size: 0.78rem; color: var(--text-muted); display: block; margin-bottom: 2px; }
-    .info-text span { font-size: 0.95rem; font-weight: 600; color: var(--purple-dark); }
+    .info-text span { font-size: 0.95rem; font-weight: 600; color: var(--dark); }
 
     #skills { background: var(--white); }
     .skills-wrapper { max-width: 1200px; margin: 0 auto; }
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
     .skill-card { background: var(--gray); border-radius: 20px; padding: 30px; border: 1.5px solid transparent; transition: all 0.3s; position: relative; overflow: hidden; }
-    .skill-card::before { content: ''; position: absolute; top: 0; right: 0; width: 80px; height: 80px; background: var(--lavender); border-radius: 0 20px 0 80px; opacity: 0.4; }
-    .skill-card:hover { border-color: var(--lavender); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(200,184,255,0.2); }
+    .skill-card::before { content: ''; position: absolute; top: 0; right: 0; width: 80px; height: 80px; background: var(--blue-light); border-radius: 0 20px 0 80px; opacity: 0.4; }
+    .skill-card:hover { border-color: var(--blue); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(79,142,247,0.15); }
     .skill-icon { font-size: 2.2rem; margin-bottom: 14px; }
-    .skill-card h3 { font-size: 1.1rem; font-weight: 800; color: var(--purple-dark); margin-bottom: 8px; }
+    .skill-card h3 { font-size: 1.1rem; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
     .skill-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 18px; }
-    .skill-bar-wrap { background: #E4DAFF; border-radius: 10px; height: 8px; overflow: hidden; }
-    .skill-bar { height: 100%; border-radius: 10px; background: linear-gradient(90deg, var(--purple-mid), var(--orange)); transition: width 1.5s cubic-bezier(0.4,0,0.2,1); }
+    .skill-bar-wrap { background: #DBEAFE; border-radius: 10px; height: 8px; overflow: hidden; }
+    .skill-bar { height: 100%; border-radius: 10px; background: linear-gradient(90deg, var(--blue-dark), var(--green)); transition: width 1.5s cubic-bezier(0.4,0,0.2,1); }
     .skill-level { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
     .skill-level span { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; }
-    .skill-level strong { font-size: 0.85rem; color: var(--orange); font-weight: 800; }
+    .skill-level strong { font-size: 0.85rem; color: var(--blue-dark); font-weight: 800; }
 
-    #tools { background: var(--purple-dark); padding: 70px 5%; }
+    #tools { background: var(--dark); padding: 70px 5%; }
     .tools-inner { max-width: 1200px; margin: 0 auto; }
-    #tools .section-tag { background: var(--orange); color: var(--white); }
+    #tools .section-tag { background: var(--green); color: var(--dark); }
     .tools-grid { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 40px; }
-    .tool-chip { background: rgba(200,184,255,0.12); border: 1.5px solid rgba(200,184,255,0.3); color: var(--lavender-light); padding: 12px 22px; border-radius: 40px; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: all 0.3s; cursor: default; }
-    .tool-chip:hover { background: var(--lavender); color: var(--purple-dark); border-color: var(--lavender); transform: scale(1.05); }
-    .tool-chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); }
+    .tool-chip { background: rgba(79,142,247,0.1); border: 1.5px solid rgba(79,142,247,0.3); color: var(--blue-light); padding: 12px 22px; border-radius: 40px; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: all 0.3s; cursor: default; }
+    .tool-chip:hover { background: var(--blue-dark); color: var(--white); border-color: var(--blue-dark); transform: scale(1.05); }
+    .tool-chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
 
     #projects { background: var(--gray); }
     .projects-wrapper { max-width: 1200px; margin: 0 auto; }
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; }
-    .project-card { background: var(--white); border-radius: 24px; overflow: hidden; box-shadow: 0 4px 20px rgba(45,27,105,0.08); transition: all 0.35s; border: 1.5px solid transparent; }
-    .project-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(45,27,105,0.15); border-color: var(--lavender); }
+    .project-card { background: var(--white); border-radius: 24px; overflow: hidden; box-shadow: 0 4px 20px rgba(37,99,235,0.08); transition: all 0.35s; border: 1.5px solid transparent; }
+    .project-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(37,99,235,0.15); border-color: var(--blue); }
     .project-thumb { width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; position: relative; }
-    .project-thumb .proj-label { position: absolute; top: 16px; right: 16px; background: rgba(26,15,60,0.75); color: var(--lavender); font-size: 0.75rem; font-weight: 700; padding: 5px 12px; border-radius: 20px; backdrop-filter: blur(4px); }
+    .project-thumb .proj-label { position: absolute; top: 16px; right: 16px; background: rgba(13,17,23,0.75); color: var(--blue-light); font-size: 0.75rem; font-weight: 700; padding: 5px 12px; border-radius: 20px; backdrop-filter: blur(4px); }
     .project-body { padding: 26px; }
-    .project-body h3 { font-size: 1.15rem; font-weight: 800; color: var(--purple-dark); margin-bottom: 8px; }
+    .project-body h3 { font-size: 1.15rem; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
     .project-body p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 18px; }
     .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-    .tag { background: var(--lavender-light); color: var(--purple-mid); font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
-    .project-link { display: inline-flex; align-items: center; gap: 8px; color: var(--orange); font-size: 0.88rem; font-weight: 700; text-decoration: none; transition: gap 0.3s; }
-    .project-link:hover { gap: 12px; }
+    .tag { background: #DBEAFE; color: var(--blue-dark); font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
+    .project-link { display: inline-flex; align-items: center; gap: 8px; color: var(--blue-dark); font-size: 0.88rem; font-weight: 700; text-decoration: none; transition: gap 0.3s; }
+    .project-link:hover { gap: 12px; color: var(--green); }
 
     #services { background: var(--white); }
     .services-wrapper { max-width: 1200px; margin: 0 auto; }
     .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
-    .service-card { background: var(--purple-dark); border-radius: 24px; padding: 36px 28px; text-align: center; position: relative; overflow: hidden; transition: all 0.3s; }
-    .service-card::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--orange), var(--lavender)); }
-    .service-card:hover { transform: translateY(-5px); background: var(--purple-mid); }
+    .service-card { background: var(--dark); border-radius: 24px; padding: 36px 28px; text-align: center; position: relative; overflow: hidden; transition: all 0.3s; }
+    .service-card::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--blue-dark), var(--green)); }
+    .service-card:hover { transform: translateY(-5px); background: var(--dark-mid); }
     .service-icon { font-size: 2.8rem; margin-bottom: 18px; display: block; }
-    .service-card h3 { color: var(--lavender); font-size: 1.05rem; font-weight: 800; margin-bottom: 10px; }
-    .service-card p { color: rgba(200,184,255,0.7); font-size: 0.85rem; line-height: 1.7; }
-    .service-price { display: inline-block; background: var(--orange); color: var(--white); font-size: 0.8rem; font-weight: 800; padding: 5px 14px; border-radius: 20px; margin-top: 16px; }
+    .service-card h3 { color: var(--blue-light); font-size: 1.05rem; font-weight: 800; margin-bottom: 10px; }
+    .service-card p { color: rgba(168,200,255,0.7); font-size: 0.85rem; line-height: 1.7; }
+    .service-price { display: inline-block; background: var(--green); color: var(--dark); font-size: 0.8rem; font-weight: 800; padding: 5px 14px; border-radius: 20px; margin-top: 16px; }
 
-    #testimonials { background: var(--lavender-light); }
+    #testimonials { background: #EFF6FF; }
     .testimonials-wrapper { max-width: 1200px; margin: 0 auto; }
     .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-    .testimonial-card { background: var(--white); border-radius: 22px; padding: 32px; position: relative; box-shadow: 0 4px 16px rgba(45,27,105,0.08); }
-    .testimonial-card::before { content: '"'; position: absolute; top: -10px; right: 28px; font-size: 5rem; color: var(--lavender); font-family: serif; line-height: 1; }
-    .testimonial-card p { color: #3D3157; font-size: 0.92rem; line-height: 1.85; margin-bottom: 20px; }
+    .testimonial-card { background: var(--white); border-radius: 22px; padding: 32px; position: relative; box-shadow: 0 4px 16px rgba(37,99,235,0.08); }
+    .testimonial-card::before { content: '"'; position: absolute; top: -10px; right: 28px; font-size: 5rem; color: var(--blue-light); font-family: serif; line-height: 1; }
+    .testimonial-card p { color: #2D3748; font-size: 0.92rem; line-height: 1.85; margin-bottom: 20px; }
     .testimonial-author { display: flex; align-items: center; gap: 14px; }
-    .author-avatar { width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg, var(--purple-mid), var(--orange)); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
-    .author-info strong { display: block; font-size: 0.9rem; font-weight: 800; color: var(--purple-dark); }
+    .author-avatar { width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg, var(--blue-dark), var(--green)); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+    .author-info strong { display: block; font-size: 0.9rem; font-weight: 800; color: var(--dark); }
     .author-info span { font-size: 0.78rem; color: var(--text-muted); }
-    .stars { color: var(--orange); font-size: 0.9rem; margin-bottom: 10px; }
+    .stars { color: var(--green); font-size: 0.9rem; margin-bottom: 10px; }
 
     #process { background: var(--white); }
     .process-wrapper { max-width: 1000px; margin: 0 auto; }
     .process-steps { position: relative; padding-right: 40px; }
-    .process-steps::before { content: ''; position: absolute; right: 20px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--orange), var(--lavender)); }
+    .process-steps::before { content: ''; position: absolute; right: 20px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--blue-dark), var(--green)); }
     .step { display: flex; gap: 30px; margin-bottom: 44px; align-items: flex-start; position: relative; }
-    .step-num { width: 44px; height: 44px; border-radius: 50%; background: var(--orange); color: var(--white); font-size: 1.1rem; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: absolute; right: -42px; box-shadow: 0 0 0 6px rgba(255,107,0,0.15); }
-    .step-content { background: var(--gray); border-radius: 18px; padding: 24px 28px; border: 1.5px solid var(--lavender-light); width: 100%; transition: all 0.3s; }
-    .step-content:hover { border-color: var(--lavender); transform: translateX(-4px); }
-    .step-content h3 { font-size: 1.05rem; font-weight: 800; color: var(--purple-dark); margin-bottom: 6px; }
+    .step-num { width: 44px; height: 44px; border-radius: 50%; background: var(--blue-dark); color: var(--white); font-size: 1.1rem; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: absolute; right: -42px; box-shadow: 0 0 0 6px rgba(37,99,235,0.15); }
+    .step-content { background: var(--gray); border-radius: 18px; padding: 24px 28px; border: 1.5px solid #DBEAFE; width: 100%; transition: all 0.3s; }
+    .step-content:hover { border-color: var(--blue); transform: translateX(-4px); }
+    .step-content h3 { font-size: 1.05rem; font-weight: 800; color: var(--dark); margin-bottom: 6px; }
     .step-content p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
-    .step-badge { display: inline-block; background: var(--lavender); color: var(--purple-dark); font-size: 0.7rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; margin-bottom: 8px; }
+    .step-badge { display: inline-block; background: var(--blue-light); color: var(--dark); font-size: 0.7rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; margin-bottom: 8px; }
 
-    #contact { background: var(--purple-dark); }
+    #contact { background: var(--dark); }
     .contact-inner { max-width: 1100px; margin: 0 auto; }
     #contact .section-title { color: var(--white); }
-    #contact .section-sub { color: rgba(200,184,255,0.75); }
-    #contact .section-tag { background: var(--orange); color: var(--white); }
+    #contact .section-sub { color: rgba(168,200,255,0.75); }
+    #contact .section-tag { background: var(--green); color: var(--dark); }
     .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; margin-top: 50px; }
     .contact-info-item { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
-    .c-icon { width: 50px; height: 50px; border-radius: 14px; background: rgba(200,184,255,0.1); border: 1.5px solid rgba(200,184,255,0.25); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
-    .c-text strong { display: block; font-size: 0.8rem; color: var(--lavender-light); opacity: 0.7; margin-bottom: 2px; }
+    .c-icon { width: 50px; height: 50px; border-radius: 14px; background: rgba(79,142,247,0.1); border: 1.5px solid rgba(79,142,247,0.25); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+    .c-text strong { display: block; font-size: 0.8rem; color: var(--blue-light); opacity: 0.7; margin-bottom: 2px; }
     .c-text span { color: var(--white); font-size: 0.95rem; font-weight: 600; }
     .social-links { display: flex; gap: 14px; margin-top: 32px; }
-    .social-btn { width: 48px; height: 48px; border-radius: 14px; background: rgba(200,184,255,0.1); border: 1.5px solid rgba(200,184,255,0.25); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: var(--lavender); text-decoration: none; transition: all 0.3s; }
-    .social-btn:hover { background: var(--orange); border-color: var(--orange); transform: scale(1.1); }
-    .contact-form { background: rgba(200,184,255,0.06); border: 1.5px solid rgba(200,184,255,0.15); border-radius: 24px; padding: 40px; }
+    .social-btn { width: 48px; height: 48px; border-radius: 14px; background: rgba(79,142,247,0.1); border: 1.5px solid rgba(79,142,247,0.25); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: var(--blue-light); text-decoration: none; transition: all 0.3s; }
+    .social-btn:hover { background: var(--blue-dark); border-color: var(--blue-dark); transform: scale(1.1); }
+    .contact-form { background: rgba(79,142,247,0.06); border: 1.5px solid rgba(79,142,247,0.15); border-radius: 24px; padding: 40px; }
     .form-group { margin-bottom: 20px; }
-    .form-group label { display: block; color: var(--lavender-light); font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; }
-    .form-group input, .form-group textarea, .form-group select { width: 100%; background: rgba(255,255,255,0.05); border: 1.5px solid rgba(200,184,255,0.2); border-radius: 12px; padding: 14px 16px; color: var(--white); font-size: 0.9rem; font-family: 'Cairo', sans-serif; direction: rtl; outline: none; transition: border-color 0.3s; }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--lavender); }
+    .form-group label { display: block; color: var(--blue-light); font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; background: rgba(255,255,255,0.05); border: 1.5px solid rgba(79,142,247,0.2); border-radius: 12px; padding: 14px 16px; color: var(--white); font-size: 0.9rem; font-family: 'Cairo', sans-serif; direction: rtl; outline: none; transition: border-color 0.3s; }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--blue); }
     .form-group textarea { min-height: 120px; resize: vertical; }
-    .form-group select option { background: var(--purple-dark); }
+    .form-group select option { background: var(--dark); }
     .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .btn-submit { width: 100%; background: var(--orange); color: var(--white); border: none; border-radius: 14px; padding: 16px; font-size: 1rem; font-weight: 700; font-family: 'Cairo', sans-serif; cursor: pointer; transition: all 0.3s; margin-top: 6px; }
-    .btn-submit:hover { background: var(--orange-light); transform: translateY(-2px); }
+    .btn-submit { width: 100%; background: var(--blue-dark); color: var(--white); border: none; border-radius: 14px; padding: 16px; font-size: 1rem; font-weight: 700; font-family: 'Cairo', sans-serif; cursor: pointer; transition: all 0.3s; margin-top: 6px; }
+    .btn-submit:hover { background: var(--blue); transform: translateY(-2px); }
 
-    footer { background: #0D0720; padding: 40px 5%; text-align: center; border-top: 2px solid rgba(200,184,255,0.1); }
-    .footer-logo { font-size: 1.8rem; font-weight: 900; color: var(--lavender); margin-bottom: 12px; }
-    .footer-logo span { color: var(--orange); }
+    footer { background: #060A0F; padding: 40px 5%; text-align: center; border-top: 2px solid rgba(79,142,247,0.1); }
+    .footer-logo { font-size: 1.8rem; font-weight: 900; color: var(--blue-light); margin-bottom: 12px; }
+    .footer-logo span { color: var(--green); }
     .footer-links { display: flex; justify-content: center; gap: 28px; list-style: none; margin: 16px 0; }
-    .footer-links a { color: rgba(200,184,255,0.6); text-decoration: none; font-size: 0.88rem; transition: color 0.3s; }
-    .footer-links a:hover { color: var(--lavender); }
-    .footer-copy { color: rgba(200,184,255,0.35); font-size: 0.8rem; margin-top: 12px; }
+    .footer-links a { color: rgba(168,200,255,0.6); text-decoration: none; font-size: 0.88rem; transition: color 0.3s; }
+    .footer-links a:hover { color: var(--blue-light); }
+    .footer-copy { color: rgba(168,200,255,0.35); font-size: 0.8rem; margin-top: 12px; }
 
-    .scroll-top { position: fixed; bottom: 28px; left: 28px; width: 48px; height: 48px; background: var(--orange); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; cursor: pointer; box-shadow: 0 4px 18px rgba(255,107,0,0.4); text-decoration: none; opacity: 0; transform: translateY(10px); transition: all 0.3s; z-index: 990; }
+    .scroll-top { position: fixed; bottom: 28px; left: 28px; width: 48px; height: 48px; background: var(--blue-dark); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; cursor: pointer; box-shadow: 0 4px 18px rgba(37,99,235,0.4); text-decoration: none; opacity: 0; transform: translateY(10px); transition: all 0.3s; z-index: 990; }
     .scroll-top.show { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 900px) {
@@ -239,7 +237,7 @@
 <body>
 
 <nav>
-  <div class="nav-logo">كوثر<span>.</span></div>
+  <div class="nav-logo">ماجد<span>.</span></div>
   <ul class="nav-links">
     <li><a href="#about">من أنا</a></li>
     <li><a href="#skills">المهارات</a></li>
@@ -255,23 +253,23 @@
   <div class="hero-bg-shape s3"></div>
   <div class="hero-inner">
     <div class="hero-text">
-      <span class="badge">✦ استديو كوثر · الدفعة الأولى</span>
-      <h1>دليلك في تصميم<br /><span>ملف الأعمال</span></h1>
-      <p class="en-title">Portfolio Design</p>
-      <p class="subtitle">مرحباً، أنا كوثر اليامي — مصممة جرافيك وبراند بخبرة عملية في التدريب والتصميم. هذا ملف أعمالي الذي يعكس رحلتي الإبداعية وشغفي بإيصال الأفكار بصرياً.</p>
+      <span class="badge">✦ بكالوريوس تقنية معلومات · جامعة جازان</span>
+      <h1>مرحباً، أنا<br /><span>ماجد عطيف</span></h1>
+      <p class="en-title">Majid Atif · IT Portfolio</p>
+      <p class="subtitle">متخصص في تقنية المعلومات، شغوف بتطوير البرمجيات وحلول الشبكات وأمن المعلومات. أسعى دائماً لتحويل الأفكار التقنية إلى حلول عملية تخدم المجتمع.</p>
       <div class="hero-btns">
         <a href="#projects" class="btn-primary">استعرض أعمالي</a>
         <a href="#contact" class="btn-outline">تواصل معي</a>
       </div>
     </div>
     <div class="hero-card">
-      <div class="avatar-wrap">🎨</div>
-      <p class="name">أ. كوثر اليامي</p>
-      <p class="role">مصممة جرافيك | هوية بصرية | تصميم تجريبي</p>
+      <div class="avatar-wrap">💻</div>
+      <p class="name">ماجد عطيف</p>
+      <p class="role">تطوير برمجيات | شبكات | أمن معلومات</p>
       <div class="hero-stats">
-        <div class="stat-box"><span class="num">+50</span><div class="lbl">مشروع مكتمل</div></div>
-        <div class="stat-box"><span class="num">+30</span><div class="lbl">عميل سعيد</div></div>
-        <div class="stat-box"><span class="num">5+</span><div class="lbl">سنوات خبرة</div></div>
+        <div class="stat-box"><span class="num">+10</span><div class="lbl">مشروع مكتمل</div></div>
+        <div class="stat-box"><span class="num">3+</span><div class="lbl">سنوات دراسة</div></div>
+        <div class="stat-box"><span class="num">IT</span><div class="lbl">تخصص</div></div>
       </div>
     </div>
   </div>
@@ -280,23 +278,23 @@
 <section id="about">
   <div class="about-grid">
     <div class="about-img-wrap fade-in">
-      <div class="about-img-box">🖌️</div>
-      <div class="about-badge"><strong>2026</strong>الدفعة الأولى</div>
+      <div class="about-img-box">👨‍💻</div>
+      <div class="about-badge"><strong>جازان</strong>جامعة جازان</div>
     </div>
     <div class="about-content">
       <div class="section-header">
         <span class="section-tag">✦ من أنا</span>
-        <h2 class="section-title">مصممة تجمع بين <span>الإبداع</span> والاحتراف</h2>
+        <h2 class="section-title">متخصص <span>تقنية معلومات</span> طموح</h2>
         <div class="divider"></div>
       </div>
-      <p class="about-intro fade-in">أنا كوثر اليامي، مصممة جرافيك متخصصة في تصميم الهوية البصرية وملفات الأعمال. أؤمن بأن التصميم الجيد ليس مجرد جمال بصري، بل هو أداة تواصل فعّالة تنقل الرسالة بأوضح صورة ممكنة. أعمل مع العلامات التجارية والأفراد لمساعدتهم على بناء حضور بصري قوي ومتميز.</p>
+      <p class="about-intro fade-in">أنا ماجد عطيف، طالب بكالوريوس تقنية المعلومات من جامعة جازان. أمتلك شغفاً حقيقياً بعالم التقنية وتطوير الحلول الرقمية. أؤمن بأن التقنية أداة قوية لحل المشكلات وتحسين جودة الحياة، وأسعى دائماً لاكتساب أحدث المهارات في مجال تقنية المعلومات.</p>
       <div class="info-list fade-in delay-1">
-        <div class="info-item"><div class="info-icon">📍</div><div class="info-text"><strong>الموقع</strong><span>المملكة العربية السعودية</span></div></div>
-        <div class="info-item"><div class="info-icon">🎓</div><div class="info-text"><strong>التخصص</strong><span>تصميم جرافيك</span></div></div>
-        <div class="info-item"><div class="info-icon">📅</div><div class="info-text"><strong>الدورة</strong><span>2–6 يونيو 2026</span></div></div>
-        <div class="info-item"><div class="info-icon">🕐</div><div class="info-text"><strong>التوقيت</strong><span>7:00 م – 9:30 م</span></div></div>
-        <div class="info-item"><div class="info-icon">💼</div><div class="info-text"><strong>الخبرة</strong><span>+5 سنوات</span></div></div>
-        <div class="info-item"><div class="info-icon">🌐</div><div class="info-text"><strong>العمل</strong><span>محلي وعالمي</span></div></div>
+        <div class="info-item"><div class="info-icon">🎓</div><div class="info-text"><strong>الجامعة</strong><span>جامعة جازان</span></div></div>
+        <div class="info-item"><div class="info-icon">📚</div><div class="info-text"><strong>التخصص</strong><span>بكالوريوس تقنية معلومات</span></div></div>
+        <div class="info-item"><div class="info-icon">📍</div><div class="info-text"><strong>الموقع</strong><span>جازان، المملكة العربية السعودية</span></div></div>
+        <div class="info-item"><div class="info-icon">💼</div><div class="info-text"><strong>الاهتمام</strong><span>تطوير البرمجيات والشبكات</span></div></div>
+        <div class="info-item"><div class="info-icon">🌐</div><div class="info-text"><strong>البريد</strong><span>mjooody166@gmail.com</span></div></div>
+        <div class="info-item"><div class="info-icon">🚀</div><div class="info-text"><strong>الهدف</strong><span>مهندس برمجيات محترف</span></div></div>
       </div>
       <a href="#contact" class="btn-primary fade-in delay-2">تحدث معي الآن</a>
     </div>
@@ -309,15 +307,15 @@
       <span class="section-tag">✦ مهاراتي</span>
       <h2 class="section-title">ما الذي <span>أتقنه</span>؟</h2>
       <div class="divider"></div>
-      <p class="section-sub">مجموعة من المهارات المتكاملة تغطي جميع جوانب التصميم الرقمي والبصري</p>
+      <p class="section-sub">مجموعة مهارات تقنية متكاملة تغطي جوانب تقنية المعلومات الحديثة</p>
     </div>
     <div class="skills-grid">
-      <div class="skill-card fade-in"><div class="skill-icon">🎨</div><h3>الهوية البصرية والبراند</h3><p>تصميم هويات بصرية كاملة تعكس شخصية العلامة التجارية وتميزها</p><div class="skill-bar-wrap"><div class="skill-bar" style="width:95%"></div></div><div class="skill-level"><span>مستوى الإتقان</span><strong>95%</strong></div></div>
-      <div class="skill-card fade-in delay-1"><div class="skill-icon">📐</div><h3>تصميم الجرافيك</h3><p>إنشاء مواد تسويقية ومطبوعات احترافية بتكوينات بصرية مميزة</p><div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div><div class="skill-level"><span>مستوى الإتقان</span><strong>90%</strong></div></div>
-      <div class="skill-card fade-in delay-2"><div class="skill-icon">📱</div><h3>تصميم السوشيال ميديا</h3><p>تصميم محتوى بصري جذاب لمنصات التواصل الاجتماعي بأسلوب متسق</p><div class="skill-bar-wrap"><div class="skill-bar" style="width:92%"></div></div><div class="skill-level"><span>مستوى الإتقان</span><strong>92%</strong></div></div>
-      <div class="skill-card fade-in delay-3"><div class="skill-icon">📦</div><h3>تصميم التغليف والمنتجات</h3><p>تصميم عبوات ومنتجات بجماليات راقية تعزز قيمة المنتج في السوق</p><div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div><div class="skill-level"><span>مستوى الإتقان</span><strong>80%</strong></div></div>
-      <div class="skill-card fade-in delay-1"><div class="skill-icon">🖼️</div><h3>ملف الأعمال والعرض</h3><p>تصميم وبناء ملفات أعمال احترافية تبرز المشاريع بأفضل صورة ممكنة</p><div class="skill-bar-wrap"><div class="skill-bar" style="width:98%"></div></div><div class="skill-level"><span>مستوى الإتقان</span><strong>98%</strong></div></div>
-      <div class="skill-card fade-in delay-2"><div class="skill-icon">✒️</div><h3>الخط والطباعة</h3><p>توظيف الخطوط العربية والإنجليزية بأسلوب إبداعي في التصاميم</p><div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div><div class="skill-level"><span>مستوى الإتقان</span><strong>88%</strong></div></div>
+      <div class="skill-card fade-in"><div class="skill-icon">🌐</div><h3>تطوير الويب</h3><p>بناء مواقع وتطبيقات ويب باستخدام HTML, CSS, JavaScript وأطر العمل الحديثة</p><div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div><div class="skill-level"><span>مستوى الإتقان</span><strong>85%</strong></div></div>
+      <div class="skill-card fade-in delay-1"><div class="skill-icon">🐍</div><h3>البرمجة</h3><p>كتابة الكود بلغات Python, Java, C++ لحل المشكلات وبناء التطبيقات</p><div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div><div class="skill-level"><span>مستوى الإتقان</span><strong>80%</strong></div></div>
+      <div class="skill-card fade-in delay-2"><div class="skill-icon">🛢️</div><h3>قواعد البيانات</h3><p>تصميم وإدارة قواعد البيانات باستخدام MySQL, SQL Server وكتابة الاستعلامات المعقدة</p><div class="skill-bar-wrap"><div class="skill-bar" style="width:82%"></div></div><div class="skill-level"><span>مستوى الإتقان</span><strong>82%</strong></div></div>
+      <div class="skill-card fade-in delay-3"><div class="skill-icon">🔒</div><h3>أمن المعلومات</h3><p>تطبيق مبادئ أمن المعلومات وحماية الأنظمة والشبكات من التهديدات الإلكترونية</p><div class="skill-bar-wrap"><div class="skill-bar" style="width:75%"></div></div><div class="skill-level"><span>مستوى الإتقان</span><strong>75%</strong></div></div>
+      <div class="skill-card fade-in delay-1"><div class="skill-icon">🌍</div><h3>الشبكات</h3><p>إعداد وتكوين الشبكات، فهم بروتوكولات TCP/IP وإدارة البنية التحتية للشبكات</p><div class="skill-bar-wrap"><div class="skill-bar" style="width:78%"></div></div><div class="skill-level"><span>مستوى الإتقان</span><strong>78%</strong></div></div>
+      <div class="skill-card fade-in delay-2"><div class="skill-icon">☁️</div><h3>الحوسبة السحابية</h3><p>العمل مع خدمات السحابة مثل AWS وGoogle Cloud لنشر التطبيقات وإدارتها</p><div class="skill-bar-wrap"><div class="skill-bar" style="width:70%"></div></div><div class="skill-level"><span>مستوى الإتقان</span><strong>70%</strong></div></div>
     </div>
   </div>
 </section>
@@ -326,22 +324,22 @@
   <div class="tools-inner">
     <div class="section-header">
       <span class="section-tag">✦ الأدوات</span>
-      <h2 class="section-title" style="color:var(--white)">البرامج التي <span style="color:var(--orange)">أستخدمها</span></h2>
+      <h2 class="section-title" style="color:var(--white)">التقنيات التي <span style="color:var(--green)">أستخدمها</span></h2>
       <div class="divider"></div>
     </div>
     <div class="tools-grid">
-      <div class="tool-chip"><span class="dot"></span> Adobe Photoshop</div>
-      <div class="tool-chip"><span class="dot"></span> Adobe Illustrator</div>
-      <div class="tool-chip"><span class="dot"></span> Adobe InDesign</div>
-      <div class="tool-chip"><span class="dot"></span> Adobe After Effects</div>
+      <div class="tool-chip"><span class="dot"></span> Python</div>
+      <div class="tool-chip"><span class="dot"></span> JavaScript</div>
+      <div class="tool-chip"><span class="dot"></span> HTML & CSS</div>
+      <div class="tool-chip"><span class="dot"></span> Java</div>
+      <div class="tool-chip"><span class="dot"></span> MySQL</div>
+      <div class="tool-chip"><span class="dot"></span> Git & GitHub</div>
+      <div class="tool-chip"><span class="dot"></span> VS Code</div>
+      <div class="tool-chip"><span class="dot"></span> Linux</div>
+      <div class="tool-chip"><span class="dot"></span> Cisco Packet Tracer</div>
       <div class="tool-chip"><span class="dot"></span> Figma</div>
-      <div class="tool-chip"><span class="dot"></span> Canva Pro</div>
-      <div class="tool-chip"><span class="dot"></span> Procreate</div>
-      <div class="tool-chip"><span class="dot"></span> Adobe XD</div>
-      <div class="tool-chip"><span class="dot"></span> Behance</div>
-      <div class="tool-chip"><span class="dot"></span> Pinterest</div>
-      <div class="tool-chip"><span class="dot"></span> Notion</div>
-      <div class="tool-chip"><span class="dot"></span> Milanote</div>
+      <div class="tool-chip"><span class="dot"></span> Microsoft Office</div>
+      <div class="tool-chip"><span class="dot"></span> AWS</div>
     </div>
   </div>
 </section>
@@ -352,15 +350,15 @@
       <span class="section-tag">✦ معرض الأعمال</span>
       <h2 class="section-title">أبرز <span>مشاريعي</span></h2>
       <div class="divider"></div>
-      <p class="section-sub">مجموعة مختارة من أعمالي التي تعكس تنوع مهاراتي وشغفي بالتصميم</p>
+      <p class="section-sub">مشاريع تقنية متنوعة تعكس مهاراتي وشغفي بعالم التقنية</p>
     </div>
     <div class="projects-grid">
-      <div class="project-card fade-in"><div class="project-thumb" style="background:linear-gradient(135deg,#1A0F3C,#C8B8FF)">🏪<span class="proj-label">هوية بصرية</span></div><div class="project-body"><h3>هوية بصرية لمتجر عطور فاخر</h3><p>تصميم هوية بصرية كاملة تشمل الشعار، الألوان، الخطوط، والمطبوعات لمتجر عطور راقٍ يستهدف شريحة الفئة المميزة.</p><div class="project-tags"><span class="tag">Illustrator</span><span class="tag">شعار</span><span class="tag">هوية</span><span class="tag">مطبوعات</span></div><a href="#" class="project-link">عرض التفاصيل ←</a></div></div>
-      <div class="project-card fade-in delay-1"><div class="project-thumb" style="background:linear-gradient(135deg,#FF6B00,#FFD700)">☕<span class="proj-label">تغليف</span></div><div class="project-body"><h3>تصميم عبوة قهوة سبيشيالتي</h3><p>تصميم تغليف مميز لعلامة قهوة سبيشيالتي يجمع بين الحداثة والأصالة بألوان ترابية دافئة.</p><div class="project-tags"><span class="tag">Photoshop</span><span class="tag">تغليف</span><span class="tag">طباعة</span></div><a href="#" class="project-link">عرض التفاصيل ←</a></div></div>
-      <div class="project-card fade-in delay-2"><div class="project-thumb" style="background:linear-gradient(135deg,#2D1B69,#FF6B00)">📱<span class="proj-label">سوشيال ميديا</span></div><div class="project-body"><h3>تيمبلت سوشيال ميديا لعيادة جمالية</h3><p>مجموعة تيمبلتات احترافية لإنستقرام تعكس راقي وجمال العيادة مع هوية بصرية متسقة.</p><div class="project-tags"><span class="tag">Figma</span><span class="tag">انستقرام</span><span class="tag">تيمبلت</span></div><a href="#" class="project-link">عرض التفاصيل ←</a></div></div>
-      <div class="project-card fade-in delay-1"><div class="project-thumb" style="background:linear-gradient(135deg,#0A5C36,#C8B8FF)">🌿<span class="proj-label">براندينج</span></div><div class="project-body"><h3>براند لمشروع عناية طبيعية</h3><p>هوية كاملة لعلامة منتجات عناية طبيعية تعكس قيم الاستدامة والنقاء بألوان هادئة ومريحة.</p><div class="project-tags"><span class="tag">Illustrator</span><span class="tag">براندينج</span><span class="tag">طبيعي</span></div><a href="#" class="project-link">عرض التفاصيل ←</a></div></div>
-      <div class="project-card fade-in delay-2"><div class="project-thumb" style="background:linear-gradient(135deg,#C8B8FF,#FF6B00)">📚<span class="proj-label">محتوى تعليمي</span></div><div class="project-body"><h3>تصميم محتوى دورة تدريبية</h3><p>تصميم مواد بصرية متكاملة لدورة تدريبية في تصميم ملف الأعمال تشمل السلايدات والمنشورات.</p><div class="project-tags"><span class="tag">InDesign</span><span class="tag">تعليمي</span><span class="tag">سلايدات</span></div><a href="#" class="project-link">عرض التفاصيل ←</a></div></div>
-      <div class="project-card fade-in delay-3"><div class="project-thumb" style="background:linear-gradient(135deg,#1A0F3C,#FF6B00)">🎪<span class="proj-label">فعالية</span></div><div class="project-body"><h3>تصميم مواد إعلانية لفعالية ثقافية</h3><p>حزمة مواد تسويقية كاملة لفعالية ثقافية تشمل البوستر والمطويات والبانر والدعوات.</p><div class="project-tags"><span class="tag">Photoshop</span><span class="tag">بوستر</span><span class="tag">إعلان</span></div><a href="#" class="project-link">عرض التفاصيل ←</a></div></div>
+      <div class="project-card fade-in"><div class="project-thumb" style="background:linear-gradient(135deg,#0D1117,#2563EB)">🌐<span class="proj-label">تطوير ويب</span></div><div class="project-body"><h3>موقع إلكتروني لإدارة الطلاب</h3><p>نظام ويب متكامل لإدارة بيانات الطلاب والدرجات والمقررات الدراسية مع لوحة تحكم إدارية.</p><div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">MySQL</span></div><a href="#" class="project-link">عرض التفاصيل ←</a></div></div>
+      <div class="project-card fade-in delay-1"><div class="project-thumb" style="background:linear-gradient(135deg,#064E3B,#00D084)">🔒<span class="proj-label">أمن معلومات</span></div><div class="project-body"><h3>تطبيق تشفير الملفات</h3><p>أداة برمجية لتشفير وفك تشفير الملفات الحساسة باستخدام خوارزميات AES وRSA.</p><div class="project-tags"><span class="tag">Python</span><span class="tag">تشفير</span><span class="tag">أمن</span></div><a href="#" class="project-link">عرض التفاصيل ←</a></div></div>
+      <div class="project-card fade-in delay-2"><div class="project-thumb" style="background:linear-gradient(135deg,#1E3A5F,#4F8EF7)">🌍<span class="proj-label">شبكات</span></div><div class="project-body"><h3>تصميم شبكة مؤسسية محاكاة</h3><p>تصميم وتكوين شبكة مؤسسية كاملة تشمل الراوترات والسويتشات وإعدادات VLAN.</p><div class="project-tags"><span class="tag">Cisco</span><span class="tag">VLAN</span><span class="tag">شبكات</span></div><a href="#" class="project-link">عرض التفاصيل ←</a></div></div>
+      <div class="project-card fade-in delay-1"><div class="project-thumb" style="background:linear-gradient(135deg,#2D1B69,#4F8EF7)">🛢️<span class="proj-label">قواعد بيانات</span></div><div class="project-body"><h3>نظام إدارة المخزون</h3><p>تطبيق لإدارة المخزون والمبيعات مع تقارير تحليلية مرئية وتنبيهات تلقائية.</p><div class="project-tags"><span class="tag">Java</span><span class="tag">SQL Server</span><span class="tag">JavaFX</span></div><a href="#" class="project-link">عرض التفاصيل ←</a></div></div>
+      <div class="project-card fade-in delay-2"><div class="project-thumb" style="background:linear-gradient(135deg,#1A1A2E,#00D084)">🤖<span class="proj-label">ذكاء اصطناعي</span></div><div class="project-body"><h3>نموذج تصنيف البيانات</h3><p>نموذج تعلم آلي لتصنيف البيانات وتحليلها باستخدام مكتبات Python العلمية.</p><div class="project-tags"><span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">ML</span></div><a href="#" class="project-link">عرض التفاصيل ←</a></div></div>
+      <div class="project-card fade-in delay-3"><div class="project-thumb" style="background:linear-gradient(135deg,#0D1117,#2563EB)">📱<span class="proj-label">تطبيق موبايل</span></div><div class="project-body"><h3>تطبيق قائمة المهام</h3><p>تطبيق جوال بسيط وأنيق لإدارة المهام اليومية مع إشعارات وتصنيفات متعددة.</p><div class="project-tags"><span class="tag">React Native</span><span class="tag">Firebase</span><span class="tag">موبايل</span></div><a href="#" class="project-link">عرض التفاصيل ←</a></div></div>
     </div>
   </div>
 </section>
@@ -371,13 +369,13 @@
       <span class="section-tag">✦ خدماتي</span>
       <h2 class="section-title">ماذا <span>أقدم لك</span>؟</h2>
       <div class="divider"></div>
-      <p class="section-sub">خدمات تصميم متكاملة تناسب احتياجاتك وتحقق أهدافك البصرية</p>
+      <p class="section-sub">حلول تقنية متكاملة تناسب احتياجاتك وتحقق أهدافك</p>
     </div>
     <div class="services-grid">
-      <div class="service-card fade-in"><span class="service-icon">🏷️</span><h3>هوية بصرية كاملة</h3><p>شعار + دليل هوية + مطبوعات أساسية + تطبيقات رقمية بأسلوب احترافي متكامل</p><span class="service-price">تبدأ من 1,500 ر.س</span></div>
-      <div class="service-card fade-in delay-1"><span class="service-icon">📋</span><h3>ملف الأعمال الاحترافي</h3><p>تصميم ملف أعمال مخصص يبرز مشاريعك ومهاراتك بأفضل صورة ممكنة</p><span class="service-price">تبدأ من 800 ر.س</span></div>
-      <div class="service-card fade-in delay-2"><span class="service-icon">📱</span><h3>إدارة السوشيال ميديا</h3><p>تصميم محتوى متسق لمنصات التواصل الاجتماعي شهرياً وفق استراتيجية بصرية واضحة</p><span class="service-price">تبدأ من 600 ر.س/شهر</span></div>
-      <div class="service-card fade-in delay-3"><span class="service-icon">🎓</span><h3>التدريب والاستشارة</h3><p>جلسات تدريبية فردية أو جماعية في مجالات التصميم وبناء ملف الأعمال</p><span class="service-price">تبدأ من 300 ر.س/جلسة</span></div>
+      <div class="service-card fade-in"><span class="service-icon">🌐</span><h3>تطوير المواقع</h3><p>بناء مواقع إلكترونية احترافية وسريعة ومتجاوبة مع جميع الأجهزة</p><span class="service-price">تواصل للسعر</span></div>
+      <div class="service-card fade-in delay-1"><span class="service-icon">🛢️</span><h3>إدارة قواعد البيانات</h3><p>تصميم وتحسين قواعد البيانات وكتابة استعلامات SQL متقدمة</p><span class="service-price">تواصل للسعر</span></div>
+      <div class="service-card fade-in delay-2"><span class="service-icon">🔒</span><h3>استشارات أمن المعلومات</h3><p>تقييم أمن الأنظمة وتقديم توصيات لحماية البيانات والشبكات</p><span class="service-price">تواصل للسعر</span></div>
+      <div class="service-card fade-in delay-3"><span class="service-icon">🌍</span><h3>إعداد وتكوين الشبكات</h3><p>تصميم وإعداد الشبكات المحلية والمؤسسية بكفاءة عالية</p><span class="service-price">تواصل للسعر</span></div>
     </div>
   </div>
 </section>
@@ -385,14 +383,14 @@
 <section id="testimonials">
   <div class="testimonials-wrapper">
     <div class="section-header">
-      <span class="section-tag">✦ آراء العملاء</span>
+      <span class="section-tag">✦ آراء الزملاء</span>
       <h2 class="section-title">ماذا قالوا <span>عني</span>؟</h2>
       <div class="divider"></div>
     </div>
     <div class="testimonials-grid">
-      <div class="testimonial-card fade-in"><div class="stars">★★★★★</div><p>كوثر من أفضل المصممين اللي تعاملت معهم. فاهمة كيف تترجم أفكاري لتصميم يعبر عن شخصية علامتي التجارية بدقة متناهية.</p><div class="testimonial-author"><div class="author-avatar">👩</div><div class="author-info"><strong>نورة العمري</strong><span>صاحبة علامة عناية طبيعية</span></div></div></div>
-      <div class="testimonial-card fade-in delay-1"><div class="stars">★★★★★</div><p>الهوية البصرية اللي صممتها كوثر لمتجري غيّرت نظرة العملاء له 180 درجة. احترافية عالية وتسليم في الوقت المحدد دائماً.</p><div class="testimonial-author"><div class="author-avatar">🧑</div><div class="author-info"><strong>محمد الغامدي</strong><span>صاحب متجر أزياء</span></div></div></div>
-      <div class="testimonial-card fade-in delay-2"><div class="stars">★★★★★</div><p>دورة ملف الأعمال مع أ.كوثر كانت نقطة تحول حقيقية في مسيرتي. تعلمت كيف أقدم نفسي بشكل احترافي وجذبت عملاء جدد.</p><div class="testimonial-author"><div class="author-avatar">👩</div><div class="author-info"><strong>ريم السهلي</strong><span>مصممة جرافيك - خريجة الدورة</span></div></div></div>
+      <div class="testimonial-card fade-in"><div class="stars">★★★★★</div><p>ماجد زميل متميز ومجتهد، يتعامل مع المشاريع التقنية باحترافية عالية ويحل المشكلات البرمجية بطريقة إبداعية ومنطقية.</p><div class="testimonial-author"><div class="author-avatar">👨</div><div class="author-info"><strong>أحمد المالكي</strong><span>زميل دراسة - جامعة جازان</span></div></div></div>
+      <div class="testimonial-card fade-in delay-1"><div class="stars">★★★★★</div><p>ساعدني ماجد في مشروع التخرج بخبرته في قواعد البيانات، كان دعمه لا يُقدَّر بثمن وأسلوبه في الشرح واضح جداً.</p><div class="testimonial-author"><div class="author-avatar">👩</div><div class="author-info"><strong>سارة القحطاني</strong><span>طالبة تقنية معلومات</span></div></div></div>
+      <div class="testimonial-card fade-in delay-2"><div class="stars">★★★★★</div><p>شخص موثوق وملتزم، عمل معنا على مشروع إعداد الشبكة وأنجزه باحترافية تفوق توقعاتنا وفي الوقت المحدد.</p><div class="testimonial-author"><div class="author-avatar">🧑</div><div class="author-info"><strong>خالد الزهراني</strong><span>مشرف مشروع تقني</span></div></div></div>
     </div>
   </div>
 </section>
@@ -401,16 +399,16 @@
   <div class="process-wrapper">
     <div class="section-header">
       <span class="section-tag">✦ طريقة العمل</span>
-      <h2 class="section-title">كيف <span>نعمل معاً</span>؟</h2>
+      <h2 class="section-title">كيف <span>أعمل على مشروعك</span>؟</h2>
       <div class="divider"></div>
-      <p class="section-sub">منهجية واضحة ومنظمة تضمن لك أفضل نتيجة في أقل وقت</p>
+      <p class="section-sub">منهجية واضحة ومنظمة تضمن لك أفضل نتيجة تقنية</p>
     </div>
     <div class="process-steps">
-      <div class="step fade-in"><div class="step-num">1</div><div class="step-content"><span class="step-badge">الاستفسار</span><h3>التواصل والاستشارة الأولية</h3><p>نتعرف على مشروعك واحتياجاتك وأهدافك عبر جلسة استشارية مجانية لمدة 30 دقيقة</p></div></div>
-      <div class="step fade-in delay-1"><div class="step-num">2</div><div class="step-content"><span class="step-badge">التخطيط</span><h3>تحديد المتطلبات وعرض السعر</h3><p>نحدد نطاق المشروع والجدول الزمني والميزانية المناسبة مع توقيع الاتفاقية</p></div></div>
-      <div class="step fade-in delay-2"><div class="step-num">3</div><div class="step-content"><span class="step-badge">التصميم</span><h3>البحث والتصميم الإبداعي</h3><p>أبدأ بالبحث والإلهام ثم تقديم مفهوم التصميم الأولي مع مراحل التعديل والمراجعة</p></div></div>
-      <div class="step fade-in delay-3"><div class="step-num">4</div><div class="step-content"><span class="step-badge">المراجعة</span><h3>التعديل وضمان الجودة</h3><p>مراحل تعديل لا محدودة حتى تصل للنتيجة المثالية التي تعكس رؤيتك بالكامل</p></div></div>
-      <div class="step fade-in delay-4"><div class="step-num">5</div><div class="step-content"><span class="step-badge">التسليم</span><h3>التسليم النهائي والدعم</h3><p>تسليم جميع الملفات بالصيغ المطلوبة مع دليل الاستخدام ودعم ما بعد التسليم لمدة 30 يوماً</p></div></div>
+      <div class="step fade-in"><div class="step-num">1</div><div class="step-content"><span class="step-badge">التواصل</span><h3>فهم المتطلبات</h3><p>نتحدث عن مشروعك، احتياجاتك، والهدف التقني المراد تحقيقه بشكل مفصل</p></div></div>
+      <div class="step fade-in delay-1"><div class="step-num">2</div><div class="step-content"><span class="step-badge">التخطيط</span><h3>وضع خطة التنفيذ</h3><p>تحديد التقنيات المناسبة، الجدول الزمني، والخارطة التقنية للمشروع</p></div></div>
+      <div class="step fade-in delay-2"><div class="step-num">3</div><div class="step-content"><span class="step-badge">التطوير</span><h3>البناء والبرمجة</h3><p>تطوير الحل التقني بكود نظيف ومنظم مع اختبار مستمر للجودة</p></div></div>
+      <div class="step fade-in delay-3"><div class="step-num">4</div><div class="step-content"><span class="step-badge">الاختبار</span><h3>اختبار وضمان الجودة</h3><p>اختبار شامل للتأكد من عمل المشروع بكفاءة وخلوه من الأخطاء</p></div></div>
+      <div class="step fade-in delay-4"><div class="step-num">5</div><div class="step-content"><span class="step-badge">التسليم</span><h3>التسليم والدعم</h3><p>تسليم المشروع مع التوثيق الكامل ودعم فني لضمان استمراريته</p></div></div>
     </div>
   </div>
 </section>
@@ -419,21 +417,21 @@
   <div class="contact-inner">
     <div class="section-header">
       <span class="section-tag">✦ تواصل معي</span>
-      <h2 class="section-title">لنبدأ <span style="color:var(--orange)">مشروعك</span> معاً</h2>
+      <h2 class="section-title">لنبدأ <span style="color:var(--green)">مشروعك</span> معاً</h2>
       <div class="divider"></div>
-      <p class="section-sub">هل لديك مشروع في ذهنك؟ تواصل معي وسنحول فكرتك لواقع بصري مذهل</p>
+      <p class="section-sub">هل لديك فكرة أو مشروع تقني؟ تواصل معي وسنحولها إلى واقع</p>
     </div>
     <div class="contact-grid">
       <div>
-        <div class="contact-info-item"><div class="c-icon">📧</div><div class="c-text"><strong>البريد الإلكتروني</strong><span>hello@kawtharstudio.com</span></div></div>
-        <div class="contact-info-item"><div class="c-icon">📱</div><div class="c-text"><strong>واتساب</strong><span>+966 5X XXX XXXX</span></div></div>
-        <div class="contact-info-item"><div class="c-icon">📍</div><div class="c-text"><strong>الموقع</strong><span>المملكة العربية السعودية</span></div></div>
-        <div class="contact-info-item"><div class="c-icon">🕐</div><div class="c-text"><strong>ساعات العمل</strong><span>الأحد – الخميس، 9 ص – 6 م</span></div></div>
+        <div class="contact-info-item"><div class="c-icon">📧</div><div class="c-text"><strong>البريد الإلكتروني</strong><span>mjooody166@gmail.com</span></div></div>
+        <div class="contact-info-item"><div class="c-icon">🎓</div><div class="c-text"><strong>الجامعة</strong><span>جامعة جازان</span></div></div>
+        <div class="contact-info-item"><div class="c-icon">📍</div><div class="c-text"><strong>الموقع</strong><span>جازان، المملكة العربية السعودية</span></div></div>
+        <div class="contact-info-item"><div class="c-icon">⚡</div><div class="c-text"><strong>التخصص</strong><span>بكالوريوس تقنية معلومات</span></div></div>
         <div class="social-links">
-          <a href="https://instagram.com/KawtharStudio" class="social-btn" title="Instagram">📸</a>
-          <a href="#" class="social-btn" title="Behance">🎨</a>
-          <a href="#" class="social-btn" title="Twitter">🐦</a>
+          <a href="#" class="social-btn" title="GitHub">💻</a>
           <a href="#" class="social-btn" title="LinkedIn">💼</a>
+          <a href="#" class="social-btn" title="Twitter">🐦</a>
+          <a href="#" class="social-btn" title="Instagram">📸</a>
         </div>
       </div>
       <div class="contact-form">
@@ -441,8 +439,8 @@
           <div class="form-group"><label>الاسم الكامل</label><input type="text" placeholder="اسمك الكريم" /></div>
           <div class="form-group"><label>البريد الإلكتروني</label><input type="email" placeholder="your@email.com" /></div>
         </div>
-        <div class="form-group"><label>نوع الخدمة</label><select><option value="">اختر نوع الخدمة</option><option>هوية بصرية كاملة</option><option>ملف أعمال احترافي</option><option>تصميم سوشيال ميديا</option><option>تدريب واستشارة</option><option>أخرى</option></select></div>
-        <div class="form-group"><label>تفاصيل المشروع</label><textarea placeholder="أخبرني عن مشروعك، أهدافك، والجدول الزمني المتوقع..."></textarea></div>
+        <div class="form-group"><label>نوع الخدمة</label><select><option value="">اختر نوع الخدمة</option><option>تطوير موقع إلكتروني</option><option>إدارة قواعد بيانات</option><option>أمن المعلومات</option><option>إعداد الشبكات</option><option>أخرى</option></select></div>
+        <div class="form-group"><label>تفاصيل المشروع</label><textarea placeholder="أخبرني عن مشروعك التقني واحتياجاتك..."></textarea></div>
         <button class="btn-submit">إرسال الرسالة ✦</button>
       </div>
     </div>
@@ -450,7 +448,7 @@
 </section>
 
 <footer>
-  <div class="footer-logo">كوثر<span>.</span></div>
+  <div class="footer-logo">ماجد<span>.</span></div>
   <ul class="footer-links">
     <li><a href="#about">من أنا</a></li>
     <li><a href="#skills">المهارات</a></li>
@@ -458,7 +456,7 @@
     <li><a href="#services">الخدمات</a></li>
     <li><a href="#contact">تواصل</a></li>
   </ul>
-  <p class="footer-copy">© 2026 استديو كوثر · @KawtharStudio · جميع الحقوق محفوظة</p>
+  <p class="footer-copy">© 2026 ماجد عطيف · بكالوريوس تقنية معلومات · جامعة جازان</p>
 </footer>
 
 <a href="#hero" class="scroll-top" id="scrollTop">↑</a>
